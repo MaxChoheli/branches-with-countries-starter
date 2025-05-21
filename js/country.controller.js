@@ -5,11 +5,8 @@ function onGetCountryInfo() {
     const countryName = elInput.value.trim()
     if (!countryName) return
 
-    axios.get(`https://restcountries.com/v3.1/name/${countryName}`)
-        .then(res => {
-            const country = res.data[0]
-            renderInfo(country)
-        })
+    getCountryByName(countryName)
+        .then(renderInfo)
         .catch(() => {
             document.getElementById('country-output').innerText = 'Country not found'
         })
