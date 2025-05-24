@@ -24,3 +24,8 @@ function renderInfo(data) {
     document.getElementById('country-population').innerText = `Population: ${data.population.toLocaleString()}`
     document.getElementById('country-area').innerText = `Area: ${data.area.toLocaleString()} km²`
 }
+
+function onClearCache() {
+    localStorage.removeItem('countryCache')
+    alert('Cache cleared')
+}
