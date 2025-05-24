@@ -27,7 +27,12 @@ function renderInfo(data) {
     document.getElementById('country-flag').alt = `${data.name.common} flag`
     document.getElementById('country-population').innerText = `Population: ${data.population.toLocaleString()}`
     document.getElementById('country-area').innerText = `Area: ${data.area.toLocaleString()} km²`
+
+    const elMap = document.getElementById('country-map')
+    elMap.href = data.maps.googleMaps
+    elMap.style.display = 'inline'
 }
+
 
 function onClearCache() {
     localStorage.removeItem('countryCache')
