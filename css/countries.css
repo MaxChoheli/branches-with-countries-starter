@@ -9,6 +9,14 @@ h1 {
     margin-bottom: 1rem;
 }
 
+form {
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-left: 0.5rem;
+}
+
 .country-details {
     margin-top: 2rem;
     background-color: white;

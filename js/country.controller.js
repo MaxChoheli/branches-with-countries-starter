@@ -1,10 +1,13 @@
 'use strict'
 
-function onGetCountryInfo() {
+function onGetCountryInfo(ev) {
+    ev.preventDefault()
+
     const elInput = document.getElementById('country-input')
     const countryName = elInput.value.trim()
     if (!countryName) return
 
+    showLoader()
     getCountryByName(countryName)
         .then(renderInfo)
         .catch(() => {
@@ -15,6 +18,7 @@ function onGetCountryInfo() {
             document.getElementById('country-area').innerText = ''
             alert('Country not found')
         })
+        .finally(() => hideLoader())
 }
 
 function renderInfo(data) {
@@ -28,4 +32,12 @@ function renderInfo(data) {
 function onClearCache() {
     localStorage.removeItem('countryCache')
     alert('Cache cleared')
+}
+
+function showLoader() {
+    document.getElementById('loader').style.display = 'block'
+}
+
+function hideLoader() {
+    document.getElementById('loader').style.display = 'none'
 }

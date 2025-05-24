@@ -14,10 +14,20 @@
 <body>
     <h1>Countries</h1>
 
-    <input type="text" id="country-input" placeholder="Enter a country name">
-    <button onclick="onGetCountryInfo()">Search</button>
-    <pre id="country-output"></pre>
+    <form onsubmit="onGetCountryInfo(event)">
+        <input type="text" id="country-input" placeholder="Enter a country name">
+        <button type="submit">Search</button>
+    </form>
+    <button onclick="onClearCache()">Clear Cache</button>
 
+    <img id="loader" src="imgs/loader.svg" alt="Loading..." style="display: none; width: 48px;">
+
+    <section id="country-output" class="country-details">
+        <h2 id="country-name"></h2>
+        <img id="country-flag" src="" alt="Country flag">
+        <p id="country-population"></p>
+        <p id="country-area"></p>
+    </section>
 
     <script src="lib/axios.js"></script>
     <script src="js/services/storage.service.js"></script>
