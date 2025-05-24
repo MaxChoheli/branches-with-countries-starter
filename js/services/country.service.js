@@ -7,8 +7,7 @@ function getCountryByName(name) {
     const key = name.toLowerCase()
     if (gCountryCache[key]) return Promise.resolve(gCountryCache[key])
 
-    const url = `https://restcountries.com/v3.1/name/${name}`
-    return axios.get(url)
+    return axios.get(`https://restcountries.com/v3.1/name/${name}`)
         .then(res => {
             const country = res.data[0]
             gCountryCache[key] = country

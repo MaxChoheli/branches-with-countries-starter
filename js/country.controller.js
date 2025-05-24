@@ -8,17 +8,19 @@ function onGetCountryInfo() {
     getCountryByName(countryName)
         .then(renderInfo)
         .catch(() => {
-            document.getElementById('country-output').innerText = 'Country not found'
+            document.getElementById('country-name').innerText = ''
+            document.getElementById('country-flag').src = ''
+            document.getElementById('country-flag').alt = ''
+            document.getElementById('country-population').innerText = ''
+            document.getElementById('country-area').innerText = ''
+            alert('Country not found')
         })
 }
 
 function renderInfo(data) {
-    const output = `
-Name: ${data.name.common}
-Capital: ${data.capital}
-Population: ${data.population.toLocaleString()}
-Area: ${data.area.toLocaleString()} km²
-Region: ${data.region}
-  `
-    document.getElementById('country-output').innerText = output
+    document.getElementById('country-name').innerText = data.name.common
+    document.getElementById('country-flag').src = data.flags.png
+    document.getElementById('country-flag').alt = `${data.name.common} flag`
+    document.getElementById('country-population').innerText = `Population: ${data.population.toLocaleString()}`
+    document.getElementById('country-area').innerText = `Area: ${data.area.toLocaleString()} km²`
 }

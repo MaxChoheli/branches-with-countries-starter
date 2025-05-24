@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/countries.css">
-
     <title>countries</title>
 </head>
 
@@ -17,16 +16,18 @@
 
     <input type="text" id="country-input" placeholder="Enter a country name">
     <button onclick="onGetCountryInfo()">Search</button>
-    <pre id="country-output"></pre>
 
+    <section id="country-output" class="country-details">
+        <h2 id="country-name"></h2>
+        <img id="country-flag" src="" alt="Country flag">
+        <p id="country-population"></p>
+        <p id="country-area"></p>
+    </section>
 
     <script src="lib/axios.js"></script>
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/country.service.js"></script>
     <script src="js/country.controller.js"></script>
-
-
-
 </body>
 
 </html>
