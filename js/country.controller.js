@@ -53,7 +53,6 @@ function renderInfo(data) {
     }
 }
 
-
 function onClearCache() {
     localStorage.removeItem('countryCache')
     alert('Cache cleared')

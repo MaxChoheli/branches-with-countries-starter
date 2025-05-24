@@ -30,3 +30,15 @@ button {
     margin: 1rem 0;
     border: 1px solid #ccc;
 }
+
+.neighbors {
+    margin-top: 1rem;
+}
+
+.neighbors button {
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #aaa;
+    background-color: #eee;
+    cursor: pointer;
+}
